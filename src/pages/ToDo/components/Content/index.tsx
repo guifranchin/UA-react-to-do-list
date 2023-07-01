@@ -75,6 +75,7 @@ export const Content = () => {
       <main>
         <article className={styles.input_container}>
           <input
+            data-testid="task-input"
             className={styles.input}
             type="text"
             value={description}
@@ -84,6 +85,7 @@ export const Content = () => {
             }
           />
           <button
+            data-testid="create-task-button"
             className={styles.button}
             disabled={disabledButton}
             onClick={addTaskOnList}
@@ -92,7 +94,6 @@ export const Content = () => {
             <img src={Plus} alt="Ícone de mais" />
           </button>
         </article>
-
         <article className={styles.content_header}>
           <article className={styles.tasks_container}>
             <p className={styles.tasks_created}>Tarefas Criadas</p>

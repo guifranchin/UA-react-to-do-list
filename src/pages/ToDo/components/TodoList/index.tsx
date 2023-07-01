@@ -30,12 +30,14 @@ const TodoList = ({ onDelete, onChangeCheckbox }: TodoListProps) => {
                             className={styles.content_container}
                         >
                             <input
+                                data-testid={`checkbox-${task.id}`}
                                 type="checkbox"
                                 id={task.id}
                                 onChange={() => onChangeCheckbox(task.id)}
                                 defaultChecked={task.isDone}
                             />
                             <p
+                                data-testid={`task-description-${task.id}`}
                                 className={
                                     task.isDone
                                         ? styles.text_scratched
@@ -45,6 +47,7 @@ const TodoList = ({ onDelete, onChangeCheckbox }: TodoListProps) => {
                                 {task.description}
                             </p>
                             <img
+                                data-testid={`trash-icon-${task.id}`}
                                 className={styles.img}
                                 src={Trash}
                                 alt="Ícone de lixeira"
@@ -57,7 +60,6 @@ const TodoList = ({ onDelete, onChangeCheckbox }: TodoListProps) => {
         </>
     );
 };
-
 const MemoizedTodoList = memo(TodoList);
 
 export { MemoizedTodoList };
